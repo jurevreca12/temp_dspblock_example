@@ -32,13 +32,13 @@ object Main {
     //(new chisel3.stage.ChiselStage).emitVerilog(lazyModule.module, Array("-td","gen/"))  
     
     val verilog = (new chisel3.stage.ChiselStage).emitVerilog(
-        LazyModule(new AdderTestHarness()(Parameters.empty)).module
+                   LazyModule(new AxiExampleTop()(Parameters.empty)).module
     )
     //println(s"```verilog\n$verilog```")
     //
-    val fileWriter = new FileWriter(new File("./gen/gen.v"))
+    /*val fileWriter = new FileWriter(new File("./gen/gen.v"))
     fileWriter.write(verilog)
-    fileWriter.close()
+    fileWriter.close()*/
   }
 }
 
