@@ -4,11 +4,10 @@ import chipsalliance.rocketchip.config.{Config, Parameters}
 import chisel3._
 import chisel3.internal.sourceinfo.SourceInfo
 import chisel3.stage.ChiselStage
+import chisel3.experimental.BundleLiterals._
+import freechips.rocketchip.amba.axis._
 import freechips.rocketchip.diplomacy.{SimpleNodeImp, ValName, SourceNode, NexusNode, 
                                        SinkNode, LazyModule, LazyModuleImp, TransferSizes}
-
-import freechips.rocketchip.amba.axis._
-
 
 
 class AxiSource(implicit p: Parameters) extends LazyModule {
@@ -20,7 +19,8 @@ class AxiSource(implicit p: Parameters) extends LazyModule {
 
   lazy val module = new LazyModuleImp(this) {
     val (outs, _) = streamNode.out.unzip
-    outs.foreach { case(out) => out := 0.U }
+    outs := (new AXISBundle(new AXISBundleParameters)).Lit()
+    // outs.foreach { case(out) => out := 0.U }
   }
 }
 

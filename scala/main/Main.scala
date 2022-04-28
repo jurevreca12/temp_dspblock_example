@@ -1,7 +1,6 @@
 package chipyard.example
 
 import chisel3._
-import dspblocks._
 import freechips.rocketchip.config.Parameters
 import freechips.rocketchip.diplomacy._
 
