@@ -16,7 +16,7 @@ object Main {
     //(new chisel3.stage.ChiselStage).execute(args, Seq(ChiselGeneratorAnnotation(() => LazyModule(new MyWrapper()(Parameters.empty)).module)))
 
     val verilog = (new chisel3.stage.ChiselStage).emitVerilog(
-                   LazyModule(new MyWrapper()(Parameters.empty)).module
+                   LazyModule(new MyAxisWrapper()(Parameters.empty)).module
     )
     //println(s"```verilog\n$verilog```")
 
