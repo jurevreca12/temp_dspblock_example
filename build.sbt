@@ -10,8 +10,8 @@ lazy val root = (project in file("."))
     name := "chisel4ml",
     libraryDependencies ++= Seq(
       "edu.berkeley.cs" %% "chisel3"          % chiselVersion,
-      "edu.berkeley.cs" %% "chiseltest"       % "0.5.1" % "test",
-      "edu.berkeley.cs" %% "dsptools"         % "1.5.2",
+      "edu.berkeley.cs" %% "chiseltest"       % "0.5.3" % "test",
+      "edu.berkeley.cs" %% "dsptools"         % "1.5.3",
       //"edu.berkeley.cs" %% "rocketchip"       % "1.2.6", // replaced by lib/rocketchip.jar
       //"edu.berkeley.cs" %% "rocket-dsptools"  % "1.2.6" // not needed
     ),
