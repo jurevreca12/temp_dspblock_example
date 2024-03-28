@@ -1,3 +1,6 @@
 target/
 gen/
 .*.swp
+MyAxisWrapper.v
+MyAxisWrapper.fir
+MyAxisWrapper.anno.json
