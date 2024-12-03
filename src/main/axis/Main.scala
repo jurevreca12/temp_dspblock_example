@@ -1,4 +1,4 @@
-package chipyard.example
+package axis
 
 import chisel3._
 import freechips.rocketchip.config.Parameters
@@ -18,12 +18,17 @@ object Main {
     val verilog = (new chisel3.stage.ChiselStage).emitVerilog(
                    LazyModule(new MyAxisWrapper()(Parameters.empty)).module
     )
+    val firrtl = (new chisel3.stage.ChiselStage).emitFirrtl(
+                   LazyModule(new MyAxisWrapper()(Parameters.empty)).module
+    )
     //println(s"```verilog\n$verilog```")
 
     val fileWriter = new FileWriter(new File("./gen/gen.v"))
     fileWriter.write(verilog)
     fileWriter.close()
-
+    val fileWriter2 = new FileWriter(new File("./gen/gen.fir"))
+    fileWriter2.write(firrtl)
+    fileWriter2.close()
   }
 }
 

@@ -4,3 +4,8 @@ gen/
 MyAxisWrapper.v
 MyAxisWrapper.fir
 MyAxisWrapper.anno.json
+.bloop/
+.bsp/
+.metals/
+.vscode/
+test_run_dir/
